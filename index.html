@@ -6,22 +6,10 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   </head>
   <body style="margin: 0; overflow: hidden">
-    <!-- A-FrameにAR.jsを紐づけ、VRボタン非表示 -->
-    <a-scene embedded arjs vr-mode-ui="enabled: false">
-      <!-- 3Dモデルを読み込む -->
-      <a-assets>
-        <a-asset-item id="tiger" src="./assets/tiger.glb"></a-asset-item>
-      </a-assets>
-
-      <!-- マーカーの.pattファイルを読み込む  -->
-      <a-marker type="pattern" url="./asset/pattern-tiger.patt">
-        <!-- 3Dモデルを呼び出す -->
-        <a-entity gltf-model="#tiger"></a-entity>
-      </a-marker>
-
-      <!-- カメラを追加 -->
-      <a-entity camera></a-entity>
-
+    <a-scene embedded arjs>
+      <a-box position="5 0 -7" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
     </a-scene>
   </body>
 </html>
