@@ -1,12 +1,20 @@
 <html>
   <head>
-    <!-- Loads <model-viewer> for modern browsers: -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
-    <!-- Loads <model-viewer> for old browsers like IE11: -->
-    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <title>gltf in A-Frame</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   </head>
+
   <body>
-    <model-viewer preload src="Shurijo_Seiden.usdz" ios-src="Shurijo_Seiden.usdz" auto-rotate camera-controls ar alt="サンプル"></model-viewer>
-    
+    <a-scene>
+      <a-assets>
+        <!-- asset for model file -->
+        <a-asset-item id="tree" src="path/some.glb"></a-asset-item>
+      </a-assets>
+
+      <!-- Using the asset management system. -->
+      <a-gltf-model src="#tree" position="0 0.5 -2" rotation="0 -45 0" scale="0.2 0.2 0.2"></a-gltf-model>
+
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
   </body>
 </html>
