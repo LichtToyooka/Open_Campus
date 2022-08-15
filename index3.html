@@ -8,10 +8,25 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <title>Sample1</title>
   </head>
-  <body>
-    <a-scene vr-mode-ui="enabled: false">
-      <!-- 3DCGモデルを読み込む -->
-      <a-gltf-model src="model2.glb"></a-gltf-model>
-    </a-scene>
-  </body>
+  <body style='margin: 0; overflow: hidden;'>
+    <!-- シーンを追加 -->
+    <a-scene embedded arjs="debugUIEnabled:false;">
+
+      <!-- 3DCGモデルの読み込み -->
+      <a-assets>
+        <a-asset-item id="model2" src="model2.glb"></a-asset-item>
+      </a-assets>
+
+      <!-- 自作マーカーを追加  -->
+      <a-marker type='pattern' url='pattern-model2.patt'>
+
+      <!-- 3DCGモデルの呼び出し -->
+      <a-gltf-model src="#model2"></a-gltf-model>
+
+    </a-marker>
+
+    <!-- カメラを追加 -->
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
 </html>
